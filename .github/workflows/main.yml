@@ -13,14 +13,14 @@ jobs:
       - uses: actions/checkout@v4
       - name: create a ZIP file
         run: ls &&
-          zip -r sukkiri-ml-codes.zip datafiles/* py/* ipynb/* LICENSE.txt README.md &&
-          unzip -t sukkiri-ml-codes.zip
+          zip -r sukkiri-ml2-codes.zip datafiles/* py/* ipynb/* LICENSE.txt README.md &&
+          unzip -t sukkiri-ml2-codes.zip
       - name: Create Release
         uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           name: Release ${{ github.ref_name }}
-          files: sukkiri-ml-codes.zip
+          files: sukkiri-ml2-codes.zip
           draft: false
           prerelease: false
